@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: install yarn
+          command: 'sudo npm install -g yarn --quiet'
+      - run:
+          name: install dependencies
+          command: 'yarn install --pure-lockfile --no-progress'
+      - run:
+          name: lint/pretty
+          command: 'yarn prettier:check'
+      - run:
+          name: build
+          command: 'yarn build'
+      - run:
+          name: test
+          command: 'yarn test:badges'
+      - run:
+          name: zip dist
+          command: 'cd dist && zip -r9 ../grafan-rss-panel-dev.zip *'
+      - store_artifacts:
+          path: grafan-rss-panel-dev.zip
+      - store_artifacts:
+          path: coverage
