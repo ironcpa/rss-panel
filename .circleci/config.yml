@@ -26,8 +26,8 @@ jobs:
           command: 'yarn test:badges'
       - run:
           name: zip dist
-          command: 'cd dist && zip -r9 ../grafan-rss-panel-dev.zip *'
+          command: 'cd dist && zip -r9 ../rss-panel-dev.zip *'
       - store_artifacts:
-          path: grafan-rss-panel-dev.zip
+          path: rss-panel-dev.zip
       - store_artifacts:
           path: coverage
