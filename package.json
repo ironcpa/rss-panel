@@ -20,13 +20,9 @@
     "rss-to-json": "^1.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
     "@grafana/toolkit": "next",
     "@grafana/ui": "next",
-    "@types/enzyme": "^3.9.3",
-    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.13",
-    "@types/jquery": "^3.3.29",
     "jest": "^24.8.0",
     "jest-coverage-badges": "^1.1.2",
     "jquery": "^3.4.1",
@@ -35,10 +31,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
     "enzyme-to-json": "^3.3.5",
-    "style-loader": "^0.23.1",
-    "ts-jest": "^24.0.2",
-    "ts-loader": "^6.0.1",
-    "typescript": "^3.4.5"
+    "ts-jest": "^24.0.2"
   },
   "prettier": {
     "trailingComma": "es5",
