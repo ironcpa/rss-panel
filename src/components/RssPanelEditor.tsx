@@ -10,7 +10,7 @@ export class RssPanelEditor extends PureComponent<
   PanelEditorProps<RssOptions>,
   State
 > {
-  constructor(props) {
+  constructor(props: PanelEditorProps<RssOptions>) {
     super(props);
 
     this.state = {
@@ -24,7 +24,8 @@ export class RssPanelEditor extends PureComponent<
       feedUrl: this.state.feedUrl,
     });
 
-  onFeedUrlChange = ({ target }) => this.setState({ feedUrl: target.value });
+  onFeedUrlChange = ({ target }: any) =>
+    this.setState({ feedUrl: target.value });
 
   render() {
     const { feedUrl } = this.state;

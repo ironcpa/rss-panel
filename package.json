@@ -3,10 +3,10 @@
   "version": "1.0.0-dev",
   "description": "Grafana RSS Panel",
   "scripts": {
-    "build": "node --max-old-space-size=8192 ./node_modules/.bin/webpack --config webpack.config.prod.js",
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
     "dev": "webpack --mode development",
     "watch": "webpack --mode development --watch",
-    "test": "jest --config jest.config.js",
     "test:coverage": "yarn test --coverage",
     "test:badges": "yarn test:coverage && jest-coverage-badges",
     "prettier:check": "prettier --list-different \"src/**/*.{ts,tsx}\"",
@@ -21,9 +21,9 @@
     "rss-to-json": "^1.0.4"
   },
   "devDependencies": {
-    "@grafana/ui": "next",
-    "@grafana/toolkit": "next",
     "@babel/core": "^7.4.5",
+    "@grafana/toolkit": "next",
+    "@grafana/ui": "next",
     "@types/enzyme": "^3.9.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.13",
