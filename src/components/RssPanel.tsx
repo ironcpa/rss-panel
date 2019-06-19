@@ -16,7 +16,7 @@ interface State {
 const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
 
 export class RssPanel extends PureComponent<Props, State> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -36,7 +36,7 @@ export class RssPanel extends PureComponent<Props, State> {
   }
 
   loadFeed(feedUrl: string) {
-    Feed.load(CORS_PROXY + feedUrl, (error, feed) => {
+    Feed.load(CORS_PROXY + feedUrl, (error: any, feed: any) => {
       if (error) {
         console.error(error);
         this.setState({ isError: true });
