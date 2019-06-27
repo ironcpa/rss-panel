@@ -5,7 +5,7 @@
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",
-    "dev": "grafana-toolkit ??? something with watch",
+    "dev": "grafana-toolkit plugin:dev",
     "test:coverage": "yarn test --coverage",
     "test:badges": "yarn test:coverage && jest-coverage-badges",
     "prettier:check": "prettier --list-different \"src/**/*.{ts,tsx}\"",
@@ -22,15 +22,13 @@
   "devDependencies": {
     "@grafana/toolkit": "next",
     "@grafana/ui": "next",
+    "@testing-library/react": "^8.0.2",
     "@types/jest": "^24.0.13",
     "jest": "^24.8.0",
     "jest-coverage-badges": "^1.1.2",
     "jquery": "^3.4.1",
     "prettier": "^1.17.1",
     "prettier-eslint-cli": "^4.7.1",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.1",
-    "enzyme-to-json": "^3.3.5",
     "ts-jest": "^24.0.2"
   },
   "prettier": {
