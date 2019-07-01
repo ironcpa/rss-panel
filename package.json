@@ -14,27 +14,23 @@
   "author": "Grafana Labs",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@types/jest": "^24.0.13",
+    "babel-loader": "^8.0.6",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rss-parser": "^3.7.1"
+    "rss-parser": "^3.7.1",
+    "ts-loader": "^6.0.4",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.2"
   },
   "devDependencies": {
     "@grafana/ui": "next",
-    "@testing-library/react": "^8.0.2",
-    "@types/jest": "^24.0.13",
-    "jest-coverage-badges": "^1.1.2",
-    "jquery": "^3.4.1",
-    "prettier": "^1.17.1",
-    "prettier-eslint-cli": "^4.7.1",
-    "jest": "24.8.0",
-    "ts-jest": "24.0.2",
-    "tslib": "1.10.0",
-    "typescript": "3.5.1"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "singleQuote": true,
-    "printWidth": 80
+    "@grafana/toolkit": "next",
+    "@testing-library/react": "^8.0.2"
   }
 }
