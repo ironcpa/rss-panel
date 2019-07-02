@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import RssParser from 'rss-parser';
 
-import { PanelProps } from '@grafana/ui';
+import { PanelProps, SeriesData, FieldType } from '@grafana/ui';
 import { RssFeedRow } from './RssFeedRow';
 import { RssFeed, RssOptions } from '../types';
 
@@ -39,6 +39,7 @@ export class RssPanel extends PureComponent<Props, State> {
 
     try {
       const res = (await parser.parseURL(CORS_PROXY + feedUrl)) as RssFeed;
+      console.log( 'FEED', res );
       this.setState({
         rssFeed: res,
         isError: false,
@@ -74,3 +75,39 @@ export class RssPanel extends PureComponent<Props, State> {
     return <div>Loading...</div>;
   }
 }
+
+export function feedToDataFrame(feed: RssFeed) {
+  const data: SeriesData = {
+    fields: [
+      {name: 'title', type: FieldType.string},
+      // {name: 'content', type: 'string'},
+      // {name: 'snippet', type: 'string'},
+      // {name: 'creator', type: 'string'},
+      {name: 'link', type: FieldType.string},
+      // {name: 'guid', type: 'string'},
+      // {name: 'isoDate', type: 'time'},
+      // {name: 'pubDate', type: 'time'},
+    ],
+    rows: [],
+    meta: {
+
+    }
+  };
+
+  for (const item of feed.items) {
+    data.rows.push([
+      item.title,
+      // item.content,
+      // item.contentSnippet,
+      // item.creator,
+      item.link,
+      // item.guid,
+      // item.isoDate,
+      // item.pubDate,
+    ]);
+  }
+
+  return data;
+}
+
+
